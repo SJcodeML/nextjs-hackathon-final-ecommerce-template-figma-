@@ -65,9 +65,9 @@ export default function Footer (){
         //    </div>
 
 // ------------------------------------------
-        <div className="bg-[#EEEFFB] flex flex-col md:flex-row justify-around p-6">  
-  <div className="flex flex-col w-full md:w-1/4 mb-6 md:mb-0 m-20 ml-52">  
-    <div className="font-bold text-4xl text-[#ODOE43] text-center md:text-left">Hekto</div>  
+        <div className="bg-[#EEEFFB] h-80 flex flex-col md:flex-row justify-around p-6">  
+  <div className="flex flex-col w-full md:w-1/4 mb-6 md:mb-0 m-20 ml-52 mt-3">  
+    <div className="font-bold text-4xl text-[#ODOE43] text-center md:text-left ">Hekto</div>  
     
     <div className="flex items-center mt-4">  
       <input type="text" className="flex-grow h-10 border-2 border-slate-300" placeholder="Enter Email Address" />  

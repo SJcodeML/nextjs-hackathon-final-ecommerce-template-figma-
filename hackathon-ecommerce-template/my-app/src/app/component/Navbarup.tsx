@@ -19,7 +19,7 @@ export default function Navbarup() {
                     </p>
                 </div>
                 <div className='flex items-center ml-4 md:ml-8  max-sm:hidden lg:flex'>
-                    <FontAwesomeIcon icon={faPhoneVolume} className='text-[#bea7de]mx-2 md:mx-3' />
+                    <FontAwesomeIcon icon={faPhoneVolume} className='text-[#f1f1f1] mx-2 md:mx-3' />
                     <p className='navbar-text font-semibold text-sm md:text-base hover:underline decoration-[#bea7de] cursor-pointer  text-[#f1f1f1]'>
                         (9567) 344759
                     </p>

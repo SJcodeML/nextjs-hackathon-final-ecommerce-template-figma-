@@ -22,8 +22,9 @@ export default function RootLayout({
       <body>
         <Navbarup/>
         <NavbarBottom/>
-        <Footer/>
+        
         {children}
+        <Footer/>
       </body>
     </html>
   );
