@@ -153,15 +153,15 @@ export default function LatestProducts() {
     return (  
         <div className="flex flex-col items-center mt-10">  
             {/* Heading */}  
-            <div className="flex justify-center items-center">  
-                <h1 className="navbar-text text-[1.75rem] leading-7 mt-10 font-extrabold text-[#1a0b5b] hoverEffect">  
+            <div className="flex justify-center items-center ">  
+                <h1 className="navbar-text text-[1.75rem] leading-7 mt-10  font-extrabold text-[#1a0b5b] hoverEffect">  
                     Latest Products 
                 </h1>  
             </div> 
 
             {/* bottom nav featured products */}
 
-            <div className="flex justify-center gap-7 items-center mb-7 mt-3  ">  
+            <div className="flex justify-center gap-7  items-center mb-9 mt-3 ">  
                 <h1 className="navbar-text text-[0.875rem] leading-7 cursor-pointer hover:text-pink-300 text-[#1a0b5b] hoverEffect">  
                     New Arrival 
                 </h1> 

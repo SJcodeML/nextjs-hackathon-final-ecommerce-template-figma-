@@ -4,6 +4,12 @@ import FeaturedSection from "./component/FeaturedSection";
 import LatestProducts from "./component/LatestProducts";
 import ShopexOffer from "./component/ShopexOffer";
 import HomeSingleCart from "./component/HomeSingleCart";
+import TrendingProducts from "./component/TrendingProducts";
+import DiscountItem from "./component/DiscountItem";
+import TopCategories from "./component/TopCategories";
+import NewsLetter from "./component/NewsLetter";
+import Logo from "./component/Logoss";
+import LatestBlogs from "./component/LatestBlogs";
 
 
 export default function Home() {
@@ -12,6 +18,12 @@ export default function Home() {
    <HeroSection/>
    <FeaturedSection/>
    <HomeSingleCart/>
+   <TrendingProducts />
+   <DiscountItem/>
+   <TopCategories/>
+   <NewsLetter/>
+   <Logo/>
+   <LatestBlogs/>
    
    
    
