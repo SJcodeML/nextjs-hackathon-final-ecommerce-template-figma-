@@ -182,7 +182,7 @@ export default function ShopGridDefault() {
                 ))}  
             </div>  
 
-           <Logo/>
+           {/* <Logo/> */}
         </div>  
     )  
 }
