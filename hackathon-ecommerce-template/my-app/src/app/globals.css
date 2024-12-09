@@ -28,6 +28,10 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.hoverEffect{
+  @apply hover:underline;
+}
+
 
 
 

@@ -61,7 +61,7 @@ export default function NavbarBottom (){
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />  
     </Head>  
 
-    <div className="font-bold text-3xl text-[#ODOE43] pl-[14rem] hover:underline decoration-[#7E33E0] cursor-pointer">Hekto</div>   
+    <div className="font-bold text-3xl text-[#ODOE43] pl-[12rem] hover:underline decoration-[#7E33E0] cursor-pointer hidden sm:hidden lg:block">Hekto</div>   
 
     {/* Navigation Links */}  
     <div className="flex space-x-3 md:space-x-10 text-pink-400 items-center">  

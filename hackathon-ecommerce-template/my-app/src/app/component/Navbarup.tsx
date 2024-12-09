@@ -12,15 +12,15 @@ export default function Navbarup() {
             </Head>
 
             <div className="bg-[#7E33E0] flex items-center justify-between p-4 flex-wrap">
-                <div className='flex items-center max-sm:hidden lg:flex pl-52'>
-                    <FontAwesomeIcon icon={faEnvelope} className='text-[#f1f1f1] mx-2 md:mx-3' />
-                    <p className="navbar-text hover:underline decoration-[#bea7de] cursor-pointer  font-semibold text-sm md:text-base text-[#f1f1f1]">
+                <div className='flex items-center max-sm:hidden lg:flex pl-48'>
+                    <FontAwesomeIcon icon={faEnvelope} className='text-[#f1f1f1] mx-2 md:mx-3 hidden' />
+                    <p className="navbar-text hover:underline decoration-[#bea7de] cursor-pointer hidden lg:block font-semibold text-sm md:text-base text-[#f1f1f1]">
                         sidrajabin457@gmail.com
                     </p>
                 </div>
                 <div className='flex items-center ml-4 md:ml-8  max-sm:hidden lg:flex'>
-                    <FontAwesomeIcon icon={faPhoneVolume} className='text-[#f1f1f1] mx-2 md:mx-3' />
-                    <p className='navbar-text font-semibold text-sm md:text-base hover:underline decoration-[#bea7de] cursor-pointer  text-[#f1f1f1]'>
+                    <FontAwesomeIcon icon={faPhoneVolume} className='text-[#f1f1f1] mx-2 md:mx-3 hidden lg:block' />
+                    <p className='navbar-text font-semibold text-sm md:text-base hover:underline hidden lg:block  decoration-[#bea7de] cursor-pointer  text-[#f1f1f1]'>
                         (9567) 344759
                     </p>
                 </div>
