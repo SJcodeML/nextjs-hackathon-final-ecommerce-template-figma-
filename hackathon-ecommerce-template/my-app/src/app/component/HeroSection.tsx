@@ -25,8 +25,8 @@
 //                 />
 //             </div>
 
-             {/* text section */}
-             {/* <div className='mt-24 w-95 '>
+            //  {/* text section */}
+             /* <div className='mt-24 w-95 '>
                  <div className='w-95 h-7  text-[#fb2e86] font-bold text-sm leading-7'>
                      Best Furniture For Your Castle
                      <div className='w-95'>
@@ -52,7 +52,7 @@
 
 
 
-        </div> */}
+        </div> */
 //     )
 // }
 
@@ -71,11 +71,11 @@ import hanginglamp from "../../public/hanginglamp.png";
 import chair from "../../public/chair.png";  
 
 export default function HeroSection() {  
-    const MyButton = ({ onClick, label }: any) => {  
+    const MyButton = ({ label }: { label: string }) => {  
         return (  
             <button  
                 className='mt-3 w-32 h-11 bg-[#fb2e86] text-white transition-colors duration-300 hover:bg-[#e02b76]'  
-                onClick={onClick}  
+                 
             >  
                 {label}  
             </button>  

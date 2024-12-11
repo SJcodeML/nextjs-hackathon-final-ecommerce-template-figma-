@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import HeroSection from "./component/HeroSection";
 import FeaturedSection from "./component/FeaturedSection";
 import LatestProducts from "./component/LatestProducts";
@@ -17,6 +17,8 @@ export default function Home() {
    <>
    <HeroSection/>
    <FeaturedSection/>
+   <LatestProducts />
+   <ShopexOffer/>
    <HomeSingleCart/>
    <TrendingProducts />
    <DiscountItem/>

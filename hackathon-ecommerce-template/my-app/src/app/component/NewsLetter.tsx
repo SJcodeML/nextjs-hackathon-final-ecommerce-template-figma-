@@ -35,11 +35,11 @@ export default function NewsLetter() {
         alignItems: 'center', // Center any inner content vertically  
     };  
 
-    const MyButton = ({ onClick, label }: any) => {  
+    const MyButton =({ label }: { label: string })  => {  
         return (  
             <button  
                 className='mt-3 w-32 h-11 bg-[#fb2e86] text-white transition-colors duration-300 hover:bg-[#e02b76]'  
-                onClick={onClick}  
+                 
             >  
                 {label}  
             </button>  

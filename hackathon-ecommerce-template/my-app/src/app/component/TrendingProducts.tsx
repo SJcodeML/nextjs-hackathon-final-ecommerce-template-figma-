@@ -213,10 +213,7 @@
 import Image, { StaticImageData } from "next/image";  
 import chair from "../../public/chair.png";  
 import chair2 from "../../public/chair2.png";  
-import chair3 from "../../public/chair3.png";  
-import chair4 from "../../public/chair4.png";  
-import chair5 from "../../public/chair5.png";  
-import chair6 from "../../public/chair6.png";  
+import chair3 from "../../public/chair3.png";   
 import chair7 from "../../public/chair7.png";  
 import trendingclock from "../../public/trendingclock.png";  
 import trendingdrawer from "../../public/trendingdrawer.png";  

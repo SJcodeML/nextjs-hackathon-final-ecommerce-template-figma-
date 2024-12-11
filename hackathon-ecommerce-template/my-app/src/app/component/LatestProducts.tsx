@@ -7,7 +7,7 @@ import chair3 from "../../public/chair3.png";
 import chair4 from "../../public/chair4.png";
 import chair5 from "../../public/chair5.png";
 import chair6 from "../../public/chair6.png";
-import chair7 from "../../public/chair7.png";
+
 
 interface Data2 {
     id:number,
