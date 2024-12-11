@@ -1,8 +1,14 @@
 import "../globals.css";
+import Image from "next/image";
+import fblink from "../../public/footerfblink.png";
+import instalink from "../../public/footerinstalink.png";
+import twitterlink from "../../public/footertwitterlink.png";
+import Link from "next/link";
+import footerleftsection from "../../public/footerleftsection.png";
 
 
-export default function Footer (){
-    return (
+
+
         // <div className="h-96 bg-[#EEEFFB] flex flex-col md:flex-row  justify-around ">
         //     <div>
         //   <div className=" w-[6.5rem] h-9  ml-20 font-bold text-4xl text-[#ODOE43] pl-[14rem] .navbar-text pt-20">Hekto
@@ -117,7 +123,9 @@ export default function Footer (){
 // </div>
 
 // ------------
-
+export default function Footer (){
+  return (
+<div className="flex flex-col">
  <div className="bg-[#EEEFFB] h-auto flex flex-col md:flex-row justify-around p-6">  
   <div className="flex flex-col w-full md:w-1/4 mb-6 md:mb-0 mx-2">  
     <div className="font-bold text-4xl text-[#ODOE43] text-center md:text-left">Hekto</div>  
@@ -171,10 +179,80 @@ export default function Footer (){
       <li className="hover:underline decoration-[#7E33E0] cursor-pointer">Visual Composer Elements</li>  
       <li className="hover:underline decoration-[#7E33E0] cursor-pointer">WooCommerce Pages</li>  
     </ul>  
-  </div>  
-</div> 
+  </div> 
 
-// --------------------
+
+  
+      
+
+
+  
+</div> 
+{/* last part  */}
+<div className="h-11 bg-[#e7e4f8] flex items-center justify-around">
+   <div >
+    <Link className="hover:underline hover:decoration-purple-600 "   
+        href="https://www.facebook.com/?name=test"   
+        target="_blank"   
+        rel="noopener noreferrer"  
+      >  
+        <Image  
+          src={footerleftsection}  
+          alt="Facebook Link"  
+          width={150}  
+          height={150}  
+        />  
+        
+      </Link> </div>
+   <div className="flex gap-2">  
+      <Link   
+        href="https://www.facebook.com/?name=test"   
+        target="_blank"   
+        rel="noopener noreferrer"  
+      >  
+        <Image   
+          src={fblink}  
+          alt="Facebook Link"  
+          width={15}  
+          height={15}  
+        />  
+      </Link>  
+
+
+      <Link   
+        href="https://www.instagram.com/accounts/login/?hl=en"   
+        target="_blank"   
+        rel="noopener noreferrer"  
+      >  
+        <Image   
+          src={instalink}  
+          alt="Facebook Link"  
+          width={15}  
+          height={15}  
+        />  
+      </Link> 
+
+
+
+      <Link   
+        href="https://www.facebook.com/?name=test"   
+        target="_blank"   
+        rel="noopener noreferrer"  
+      >  
+        <Image   
+          src={twitterlink}  
+          alt="Facebook Link"  
+          width={15}  
+          height={15}  
+        />  
+      </Link> 
+    </div>    
+  
+
+</div>
+</div>
+
+
 
 
 
