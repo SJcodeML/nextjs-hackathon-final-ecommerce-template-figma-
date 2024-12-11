@@ -2,7 +2,7 @@
 import "./globals.css";
 import Navbarup from "./component/Navbarup";
 import NavbarBottom from "./component/NavbarBottom";
-import Footer from "./component/Footer";
+
 import FontAwesomeConfig from "./fontawesome";
 
 
@@ -23,8 +23,9 @@ export default function RootLayout({
         <NavbarBottom/>
         
         {children}
-        <Footer/>
+        
       </body>
     </html>
   );
 }
+{/* <div style={{ flexGrow: 1 }}>{children}</div> */}

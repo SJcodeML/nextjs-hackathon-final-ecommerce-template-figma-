@@ -1,0 +1,7 @@
+.customh3Class {  
+    @apply text-[1.10rem] leading-5 text-center text-black hover:underline hover:decoration-black cursor-pointer   ; /* Tailwind utility classes applied here */  
+}  
+
+.customh3class2{
+    @apply text-[1.10rem] leading-5 text-center text-pink-500 hover:underline hover:decoration-pink-400 cursor-pointer ;
+}
