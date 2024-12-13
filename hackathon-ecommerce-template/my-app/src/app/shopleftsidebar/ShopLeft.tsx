@@ -1,4 +1,4 @@
-import styles from "./shoplist.module.css";
+// import styles from "./shoplist.module.css";
 // import shoplistdata from "./data";
 import Image , {StaticImageData} from "next/image";
 

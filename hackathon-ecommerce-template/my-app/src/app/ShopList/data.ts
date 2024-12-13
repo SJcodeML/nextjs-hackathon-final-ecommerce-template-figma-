@@ -16,7 +16,8 @@ interface ShopListData{
     image:StaticImageData,
     name:string,
     price:number,
-    oldPrice:number
+    oldPrice:number,
+    description:string
 }
 
 export  const shoplistdata:ShopListData[]=[
@@ -25,48 +26,55 @@ export  const shoplistdata:ShopListData[]=[
   {
         id:1,
         image:shoplist2,
-        name:"sidra",
+        name:"Accumson Tincidunt",
         price:42.00,
-        oldPrice:65.00
+        oldPrice:65.00,
+        description :"lorem ispum dolor sit amet, consectetuer ElementInternals. Magna in est adipscing in phasellus non in justo."
   },
    
        { id:2,
         image:shoplist3,
-        name:"sidra",
+        name:"Is Nulla",
         price:42.00,
-        oldPrice:65.00
+        oldPrice:65.00,
+        description :"lorem ispum dolor sit amet, consectetuer ElementInternals. Magna in est adipscing in phasellus non in justo."
 
     },
     {
         id:3,
         image:shoplist4,
-        name:"sidra",
+        name:"Vel sem",
         price:42.00,
-        oldPrice:65.00
+        oldPrice:65.00,
+        description :"lorem ispum dolor sit amet, consectetuer ElementInternals. Magna in est adipscing in phasellus non in justo."
+        
 
     },
     {
         id:4,
         image:shoplist5,
-        name:"sidra",
+        name:"Porttitor Cum",
         price:42.00,
-        oldPrice:65.00
+        oldPrice:65.00,
+        description :"lorem ispum dolor sit amet, consectetuer ElementInternals. Magna in est adipscing in phasellus non in justo."
 
     },
     {
         id:5,
         image:shoplist6,
-        name:"sidra",
+        name:"Nunc in",
         price:42.00,
-        oldPrice:65.00
+        oldPrice:65.00,
+        description :"lorem ispum dolor sit amet, consectetuer ElementInternals. Magna in est adipscing in phasellus non in justo."
 
     },
     {
         id:6,
         image:shoplist1,
-        name:"sidra",
+        name:"Vitae Facilisis",
         price:42.00,
-        oldPrice:65.00
+        oldPrice:65.00,
+        description :"lorem ispum dolor sit amet, consectetuer ElementInternals. Magna in est adipscing in phasellus non in justo."
     },
     
 

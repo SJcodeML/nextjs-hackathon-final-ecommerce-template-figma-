@@ -1,8 +1,13 @@
 import styles from "./shoplist.module.css";
 // import shoplistdata from "./data";
 import Image , {StaticImageData} from "next/image";
-
-
+import {shoplistdata} from "./data";
+import shoplist from "../../public/shoplist/shoplist star.png";
+import graystar from "../../public/shoplist/graystar.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faCartShopping,faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons';
+import Logo from "../component/Logoss";
+import Footer from "../component/Footer";
 
 
 interface ShopListData{
@@ -10,8 +15,108 @@ interface ShopListData{
     image:StaticImageData,
     name:string,
     price:number,
-    oldPrice:number
+    oldPrice:number,
+    description:string
 }
+
+const Card = ({ item }: { item: ShopListData}) => (  
+    <div className="w-340  bg-white flex flex-row shadow-md ml-[0.82rem] mb-4">  
+        {/* Image Container */}  
+        <div className="flex justify-center items-center m-2 w-80 h-70  overflow-hidden">  
+            <Image  
+                src={item.image}  
+                alt={`Image of ${item.name}`} // Use a more descriptive alt text if relevant  
+                layout="responsive"  
+                width={150}  
+                height={150}  
+                className="object-cover"  
+            />  
+        </div>  
+
+        {/* Card Details */}  
+        <div className="p-4 flex flex-col leading-6 my-2">  
+            <div className="flex flex-row jusify-between gap-28">
+            <h3 className="text-[#151875] text-[1.25rem] font-bold">{item.name}</h3> 
+            <div className="flex gap-1 justify-center items-center">
+                    <span className="rounded-full bg-[#de9034] text-lg w-2 h-2 "></span>
+                    <span className="rounded-full bg-[#e60584] text-lg w-2 h-2"></span>
+                    <span className="rounded-full bg-[#5e37ff] text-lg w-2 h-2"></span>
+
+                </div> 
+            </div>
+
+            <div className=" flex flex-col justify-around my-3"> 
+                <div className="flex items-center gap-3 ">
+                <span className="text-[#151875] text-[0.75rem]">${item.price.toFixed(2)}</span>  
+                {item.oldPrice && (  
+                    <span className="text-[#ba3131] text-[0.75rem] line-through">${item.oldPrice.toFixed(2)}</span>  
+                )} 
+                <div className="flex ">  
+                    <Stars src={shoplist} />  
+                 </div>
+                 </div> 
+                 <h3 className="text-[#9295aa] text-[0.75rem] leading-8 font-[400]  w-[26rem]">{item.description}</h3>  
+                 <div className="flex flex-row gap-3 drop-shadow-md mt-2 ">
+                    <span className="rounded-full bg-[#ffffffff]  w-7 h-7 ">
+                        <FontAwesomeIcon icon={faCartShopping} className="text-[#464a6e] m-1" />
+                    </span>
+                    <span className="rounded-full bg-[#ffffffff]  w-7 h-7 ">
+                    <FontAwesomeIcon icon={ faHeart} className="text-[#464a6e] m-1" />
+                    </span>
+                    <span className="rounded-full bg-[#ffffffff]  w-7 h-7 ">
+                    <FontAwesomeIcon icon={faMagnifyingGlassPlus} className="text-[#464a6e] m-1"/>
+                    </span> 
+                     
+                    
+                </div> 
+                 
+            </div>  
+       </div> 
+    </div>  
+);
+
+
+
+
+export const Stars = ({  
+    src,  
+    count = 4,  
+    width = 15,  
+    height = 15,  
+}: {  
+    src:StaticImageData | string;  // Type for src  
+    count?: number; // Optional type for count  
+    width?: number; // Optional type for width  
+    height?: number; // Optional type for height  
+}) => {  
+    return ( 
+        <div className="flex ">
+        <div style={{ display: 'flex' }}>  
+            {Array.from({ length: count }, (_, index) => (  
+                <Image   
+                    key={index}   
+                    src={src}   
+                    alt="star"   
+                    width={width}   
+                    height={height}   
+                />  
+            ))}  
+        </div>  
+        <div>
+        <Image 
+        src={graystar}
+        alt=""
+        width={13}
+        height={15}
+        />
+
+
+ </div>
+ </div>
+    );  
+};  
+
+
 
 
 export default function ShopListComponent (){
@@ -71,11 +176,18 @@ export default function ShopListComponent (){
                    
                 />  
             </div>  
-        </div></div>
+        </div>
 
+        </div>
+                
+        <div className="flex flex-wrap md:flex-col justify-center  mx-[11rem] gap-4 px-4 mb-20">  
+                {shoplistdata.map((item) => (  
+                    <Card item={item} key={item.id} />  
+                ))} 
+                </div>
 
-
-
+                <Logo />
+                <Footer/>
         </div>
     )
 }
