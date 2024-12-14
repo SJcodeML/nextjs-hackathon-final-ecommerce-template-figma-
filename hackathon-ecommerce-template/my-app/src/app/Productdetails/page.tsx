@@ -1,11 +1,10 @@
-import ShopListComponent from "./productdetails";
+import Productdetails from "../component/ProductDetails"
 
 
-
-export default function ShopList (){
+export default function ProductDetails (){
     return (
-        <>
-            <ShopListComponent />
-        </>
+        <div>
+            <Productdetails/>
+        </div>
     )
 }
