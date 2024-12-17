@@ -104,13 +104,13 @@ export default function AboutUs (){
               {/* first div know about our ecommerce business */}
 
               <div className="flex gap-x-3 justify-center items-center px-64 pt-32 mb-6" >
-                 <div className="bg-[#151875] w-96 rounded-sm h-40 relative">
+                 <div className="bg-[#151875] w-[30rem] rounded-sm h-44 relative">
                  <div className="absolute left-3 bottom-3">
                    <Image
                    src={aboutus}
                    alt=""
-                   width={250}
-                   height={250}
+                   width={350}
+                   height={350}
                    className="rounded-sm"
                 />
                 </div>
