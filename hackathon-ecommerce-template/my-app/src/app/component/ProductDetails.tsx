@@ -11,6 +11,18 @@ import Logo from "../component/Logoss";
 
 
 
+export  const MyButton = ({ label }: { label: string }) => {
+    return (
+        <button
+            className='mt-3 w-32 h-11 bg-[#fb2e86] text-white transition-colors duration-300 hover:bg-[#e02b76]'
+
+        >
+            {label}
+        </button>
+    );
+};
+
+
 
 interface PrData {
     id:number,
