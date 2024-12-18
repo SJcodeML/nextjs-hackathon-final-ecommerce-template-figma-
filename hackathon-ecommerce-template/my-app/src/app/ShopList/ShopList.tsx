@@ -125,7 +125,7 @@ export default function ShopListComponent (){
                <div className="h-[20rem] bg-[#f6f5ff] flex flex-col  justify-center ">
                 <div className='ml-52 mt-14 justify-center items-center'>
  
-                    <h1 className="text-[3rem] leading-10 text-[#101750] navbar-text  ">Shop Grid Default </h1>
+                    <h1 className="text-[3rem] leading-10 text-[#101750] navbar-text  ">Shop List </h1>
                     {/* nav */}
                     <div className='flex mt-5 mb-20 '>
                        <h3 className={`${styles.customh3Class}`}>Home . </h3>

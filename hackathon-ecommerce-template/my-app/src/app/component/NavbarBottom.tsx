@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faChevronDown ,faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
 import "../globals.css";
+import Link from "next/link";
 
 export default function NavbarBottom (){
     return (
@@ -65,14 +66,14 @@ export default function NavbarBottom (){
 
     {/* Navigation Links */}  
     <div className="flex space-x-3 md:space-x-10 text-pink-400 items-center">  
-        <p className="hover:underline cursor-pointer decoration-[#7E33E0]">Home
-        <FontAwesomeIcon icon={faChevronDown} className='text-pink-400 w-3 h-3 pt-1' /> </p>  
+        <Link href="/" className="hover:underline cursor-pointer decoration-[#7E33E0] hover:decoration-pink-400">Home
+        <FontAwesomeIcon icon={faChevronDown} className='text-pink-400 w-3 h-3 pt-1' /> </Link>  
          
-        <p className="hover:underline decoration-[#7E33E0] cursor-pointer">Pages</p>  
-        <p className="hover:underline decoration-[#7E33E0]  cursor-pointer">Products</p>  
-        <p className="hover:underline decoration-[#7E33E0] cursor-pointer">Blogs</p>  
-        <p className="hover:underline decoration-[#7E33E0] cursor-pointer">Shop</p>  
-        <p className="hover:underline decoration-[#7E33E0] cursor-pointer">Contact</p>  
+        <p className="hover:underline decoration-[#7E33E0] cursor-pointer hover:decoration-pink-400">Pages</p>  
+        <Link href="/Productdetails" className="hover:underline decoration-[#7E33E0]  cursor-pointer hover:decoration-pink-400">Products</Link>  
+        <Link href="/blogpage"  className="hover:underline decoration-[#7E33E0] cursor-pointer hover:decoration-pink-400">Blogs</Link>  
+        <Link href="/ShopList"  className="hover:underline decoration-[#7E33E0] cursor-pointer hover:decoration-pink-400">Shop</Link>  
+        <Link href="/contactus" className="hover:underline decoration-[#7E33E0] cursor-pointer hover:decoration-pink-400">Contact</Link>  
     </div>  
 
     {/* Search Input */}  
@@ -93,3 +94,6 @@ export default function NavbarBottom (){
     )
 }
 
+{/* <Link href="/about">  
+        <a>Go to About Page</a>  
+      </Link>  */}

@@ -28,4 +28,3 @@ export default function RootLayout({
     </html>
   );
 }
-{/* <div style={{ flexGrow: 1 }}>{children}</div> */}

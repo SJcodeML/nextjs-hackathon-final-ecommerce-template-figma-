@@ -1,5 +1,6 @@
 
 import Head from 'next/head';
+import Link from "next/link";
 import "../globals.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneVolume, faEnvelope, faChevronDown, faUser, faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -35,15 +36,15 @@ export default function Navbarup() {
                         USD
                         <FontAwesomeIcon icon={faChevronDown} className="text-[#f1f1f1] ml-1" />
                     </span>
-                    <span className='p-2 hover:underline decoration-[#bea7de] cursor-pointer .navbar-text'>
+                    <Link href="/MyAccount" className='p-2 hover:underline decoration-[#bea7de] cursor-pointer .navbar-text'>
                         Login
                         <FontAwesomeIcon icon={faUser} className="text-[#f1f1f1] ml-1" />
-                    </span>
-                    <span className='p-2 hover:underline  decoration-[#bea7de] cursor-pointer .navbar-text'>
+                    </Link>
+                    <Link href="/ShopList" className='p-2 hover:underline  decoration-[#bea7de] cursor-pointer .navbar-text'>
                         Wishlist
                         <FontAwesomeIcon icon={faHeart} className="text-[#f1f1f1] ml-1" />
-                    </span>
-                    <FontAwesomeIcon icon={faCartShopping} className="text-[#f1f1f1] hover:underline cursor-pointer  decoration-[#bea7de] " />
+                    </Link>
+                    <Link href="/shoppingcart"><FontAwesomeIcon icon={faCartShopping} className="text-[#f1f1f1] hover:underline cursor-pointer  decoration-[#bea7de] " /></Link>
                 </div>
             </div>
 
