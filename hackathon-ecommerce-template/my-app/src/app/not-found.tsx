@@ -36,7 +36,52 @@ export default function NotFound (){
 
                
            
-            <div className="flex flex-col items-center mb-20">
+            <div className="flex flex-col items-center mb-20
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            ">
             <div className=" flex justify-center items-center "> 
             <Image 
             src={ghf}
