@@ -345,31 +345,31 @@ export default function BlogPage ( ) {
                    <h1 className="text-[#151875] text-xl font-semibold mb-3">Follow</h1>
                    <div className="flex gap-3">
                    <Link href="https://www.facebook.com/login.php" passHref>  
-                <Image  
-                    src={blogfb} // Replace with your image path  
+                  <Image  
+                    src={blogfb}  
                     alt="Description of the image"  
-                    width={25} // Set the desired width  
-                    height={25} // Set the desired height  
+                    width={25}  
+                    height={25}   
                 />  
-            </Link> 
+                    </Link> 
              
 
             <Link href="https://www.facebook.com/login.php" passHref>  
                 <Image  
-                    src={bloginsta} // Replace with your image path  
+                    src={bloginsta}  
                     alt="Description of the image"  
-                    width={25} // Set the desired width  
-                    height={25} // Set the desired height  
+                    width={25}  
+                    height={25} 
                 />  
             </Link> 
 
 
             <Link href="https://www.facebook.com/login.php" passHref>  
                 <Image  
-                    src={blogtwitter} // Replace with your image path  
+                    src={blogtwitter} 
                     alt="Description of the image"  
-                    width={25} // Set the desired width  
-                    height={25} // Set the desired height  
+                    width={25}  
+                    height={25} 
                 />  
             </Link> 
             </div>
@@ -392,12 +392,6 @@ export default function BlogPage ( ) {
 
                    {/* Numeric page Navigation bar  */}
 
-                 
-
-
-
-                
-                
                 </div>
                  
            
