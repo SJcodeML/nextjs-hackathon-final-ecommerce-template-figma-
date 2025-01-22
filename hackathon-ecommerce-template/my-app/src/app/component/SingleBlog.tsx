@@ -21,8 +21,8 @@ import blogpage2 from "../../public/blogpage2.png";
 import blogpage3 from "../../public/blogpage3.png";
 import penBlog from "../../public/penblog.png";
 import calenderBlog from "../../public/calender.png";
-import Logo from "../component/Logoss";
-import Footer from "../component/Footer";
+// import Logo from "../component/Logoss";
+// import Footer from "../component/Footer";
 import styles from "@/app/MyAccount/myaccount.module.css";
 
 // --------------- single blog imports
@@ -176,64 +176,49 @@ const datablog: DataBlog[] = [
     },
 ]
 
-const Card = ({ item }: { item: DataBlog }) => (
-    <div className="w-full   mb-14 ">
-        {/* Image Container */}
-
-
-        <div className="flex justify-center items-center bg-[#f7f7f7] overflow-hidden">
-            <Image
-                src={item.image}
-                alt={`Image of ${item.name}`}
-                layout="responsive"
-                width={250}
-                height={250}
-                className="object-cover"
-            />
-        </div>
-
-        {/* Card Details */}
-        <div className="p-4 flex flex-col">
-
-            <div className="flex gap-12 pr-16">
-                <div className=" flex justify-between gap-1  ">
-                    <Image
-                        src={penBlog}
-                        alt="Hanging Lamp"
-                        width={13}
-                        height={13}
-                        className="object-contain"
-                    />
-                    <h3 className="text-[#151875] text-[0.85rem] leading-7">{item.name}</h3>
-                </div>
-
-                <div className=" flex  gap-1 ">
-                    <Image
-                        src={calenderBlog}
-                        alt="Hanging Lamp"
-                        width={13}
-                        height={15}
-                        className="object-contain"
-                    />
-                    <span className="text-[#151875] text-[0.85rem] leading-7">{item.date}</span>
-                </div>
-
-            </div>
-
-            <div className="flex items-start justify-between flex-col ">
-
-                {item.subject && (
-                    <span className="text-[#151875] text-lg font-semibold text-[0.75rem] leading-9 tracking-wide">{item.subject}</span>
-                )}
-                <span className="text-[#8a8fb9] text-[0.80rem] leading-7 mb-9">{item.description}</span>
-                <span className="text-[#8a8fb9] text-[0.80rem] leading-7">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, consequuntur temporibus blanditiis autem esse enim magnam in quod, quisquam obcaecati eum fuga recusandae numquam! Repellendus aperiam asperiores harum eaque accusantium facere repudiandae, minima ipsam at neque tenetur, impedit ad sunt quibusdam dolorem recusandae tempora quasi rem fuga! Autem, adipisci vitae?</span>
-                <span className="text-[#8a8fb9] text-[0.80rem]  mb-9 h-40 bg-[#fafafb] border-l-4 border-l-[#fc45a0] leading-8 py-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus officiis dolor facere? Amet optio vel doloremque voluptatem, odit unde deleniti omnis voluptatum maxime esse eveniet. Rem ut sapiente voluptatum inventore sed ducimus esse natus atque quis! Saepe corrupti ad labore.</span>
-                <span className="text-[#151875] text-[1rem] underline hover:text-pink-400 cursor-pointer leading-7">{item.readmore}</span>
-
-            </div>
-        </div>
-    </div>
-);
+const Card = ({ item }:{item:DataBlog}) => (  
+    <div className="bg-white shadow-md rounded-lg overflow-hidden mb-4">  
+        <div className="flex justify-center items-center bg-[#f7f7f7]">  
+            <Image  
+                src={item.image}  
+                alt={`Image of ${item.name}`}  
+                layout="responsive"  
+                width={250}  
+                height={250}  
+                className="object-cover"  
+            />  
+        </div>  
+        <div className="p-4 flex flex-col">  
+            <div className="flex justify-between items-center mb-2">  
+                <div className="flex items-center gap-1">  
+                    <Image  
+                        src={penBlog}  
+                        alt="Hanging Lamp"  
+                        width={13}  
+                        height={13}  
+                        className="object-contain"  
+                    />  
+                    <h3 className="text-[#151875] text-[1rem]">{item.name}</h3>  
+                </div>  
+                <div className="flex items-center gap-1">  
+                    <Image  
+                        src={calenderBlog}  
+                        alt="Calendar Icon"  
+                        width={13}  
+                        height={15}  
+                        className="object-contain"  
+                    />  
+                    <span className="text-[#151875] text-[1rem]">{item.date}</span>  
+                </div>  
+            </div>  
+            {item.subject && (  
+                <span className="text-[#151875] text-lg font-semibold">{item.subject}</span>  
+            )}  
+            <span className="text-[#8a8fb9] text-[0.95rem] leading-6">{item.description}</span>  
+            <span className="text-[#151875] text-[1rem] underline hover:text-pink-400 cursor-pointer">{item.readmore}</span>  
+        </div>  
+    </div>  
+);    
 
 
 
@@ -349,365 +334,509 @@ export const Stars = ({
 
 
 
-export default function SingleBlog() {
-    return (
-        <div>
-            
-            <div className="h-[15rem] bg-[#f6f5ff] flex flex-col mt-3 justify-center mb-24 ">
-                <div className='ml-52 mt-14   justify-center items-center'>
-
-                    <h1 className="text-[3rem] leading-10 text-[#101750] navbar-text font-bold ">My Account</h1>
-                    {/* nav */}
-                    <div className='flex mt-5 mb-20 '>
-                        <h3 className={`${styles.customh3Class}`}>Home . </h3>
-                        <h3 className={`${styles.customh3Class}`}> Pages . </h3>
-                        <h3 className={`${styles.customh3class2}`}>My Account</h3>
-                    </div>
-                </div>
-            </div>
-
-            {/* lower part */}
-
-            <div className="flex px-[12rem]  " >
-                <div className="flex flex-col">
-                    {/* Blog Section */}
-                    <Link href="/singleblogpage" className=" justify-center md:justify-center gap-4 px-4">
-
-                        {datablog.slice(0, 1).map((item) => (
-
-                            <Card item={item} key={item.id} />
-
-                        ))}
-                    </Link>
-                    <div className="mr-4">
-                    <div className="w-full h-10 bg-[#f7f8fb] text-[#8a8fb9] flex items-center justify-between px-6 border-black mb-6">
-                        <h1>
-                            <FontAwesomeIcon icon={faArrowLeft} />
-                            Previous Post
-                        </h1>
-
-                        <h1>
-                            Previous Post
-                            <FontAwesomeIcon icon={faArrowRight} />
-
-                        </h1>
-                    </div>
-
-                    {/* four pictures and 2 paragraphs */}
-                    <div className=" w-full flex  space-x-1 mb-4 " >
-
-                        {OOblogpagedata.map((item) => (
-                            <div className=" h-80     ">
-                                <Image
-                                    src={item.image}
-                                    alt=""
-                                    width={180}
-                                    height={180}
-                                    className="h-60 hover:border-pink-400 hover:border-2"
-                                />
-
-                                <h3 className="text-black text-[1rem] text-center leading-10 ">{item.name}</h3>
-                                <div className="flex  justify-between p-2 gap-2">
-                                    <h4 className="text-[#151875] text-[0.85rem]">{`${item.newprice.toFixed(2)}`}</h4>
-                                    <h4 className="text-pink-500 text-[0.85rem] line-through">{`${item.oldprice.toFixed(2)}`}</h4>
-                                    <div className="flex ">
-                                        <Stars src={shoplist} />
-                                    </div>
-                                </div>
-                            </div>))}
-                    </div>
+// export default function SingleBlog() {
+//     return (
+//         <div className="overflow-hidden">
+//                 {/* Header Section */}  
+//                 <div className="h-[15rem] bg-[#f6f5ff] flex flex-col justify-center mb-24">  
+//                 <div className='max-w-7xl mx-auto text-center'>  
+//                     <h1 className="text-3xl md:text-4xl leading-10 text-[#101750] font-bold">My Account</h1>  
+//                     <div className='flex justify-center mt-5 mb-20 space-x-2'>  
+//                         <h3 className="text-[#3f509e]">Home . </h3>  
+//                         <h3 className="text-[#3f509e]">Pages . </h3>  
+//                         <h3 className="text-[#3f509e]">My Account</h3>  
+//                     </div>  
+//                 </div>  
+//             </div>  
 
 
 
-                    {/* two pics and one paragraph section  */}
+//   {/* lower part */}
+ 
+//          <div className="flex flex-col md:flex-row justify-center px-4 md:px-[12rem]">  
+//     <div className="flex flex-col w-full md:w-auto">  
+//         {/* Blog Section */}  
+//         <Link href="/singleblogpage" className="flex justify-center gap-4 px-4">  
+//             {datablog.slice(0, 1).map((item) => (  
+//                 <Card item={item} key={item.id} />  
+//             ))}  
+//         </Link>  
 
-                    <div>
+//         <div className="mr-4 mt-4 md:mt-0">  
+//             <div className="w-full h-10 bg-[#f7f8fb] text-[#8a8fb9] flex items-center justify-between px-6 border-black mb-6">  
+//                 <h1 className="flex items-center">  
+//                     <FontAwesomeIcon icon={faArrowLeft} className="mr-1" />  
+//                     Previous Post  
+//                 </h1>  
+//                 <h1 className="flex items-center">  
+//                     Previous Post  
+//                     <FontAwesomeIcon icon={faArrowRight} className="ml-1" />  
+//                 </h1>  
+//             </div> 
 
-                        {/* card secction */}
-                        <div className=" flex justify-between h-60 mb-5 border-2" >
-                            {Oblogpagedata.slice(0, 2).map((item) => ( // Modify this line to slice the first 2 items  
-                                <div key={item.id} className="mb-4">
-                                    <Image
-                                        src={item.image}
+
+
+//      {/* four pictures and 2 paragraphs */}
+//      <div className="w-full flex flex-wrap space-x-1 mb-4">  
+//   {OOblogpagedata.map((item, index) => (  
+//     <div key={index} className="h-80 flex-none max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mb-4">  
+//       <Image  
+//         src={item.image}  
+//         alt=""  
+//         width={180}  
+//         height={180}  
+//         className="h-60 hover:border-pink-400 hover:border-2 transition duration-300"  
+//       />  
+
+//       <h3 className="text-black text-[1rem] text-center leading-10 mt-1">{item.name}</h3>  
+//       <div className="flex justify-between p-2 gap-2">  
+//         <h4 className="text-[#151875] text-[0.85rem]">{`${item.newprice.toFixed(2)}`}</h4>  
+//         <h4 className="text-pink-500 text-[0.85rem] line-through">{`${item.oldprice.toFixed(2)}`}</h4>  
+//         <div className="flex">  
+//           <Stars src={shoplist} />  
+//         </div>  
+//       </div>  
+//     </div>  
+//   ))}  
+// </div>
+
+
+//  {/* Follow Section */}
+//  <div className="flex justify-center space-x-7 mt-5 mb-10 flex-wrap">  
+//   <Link href="https://www.facebook.com/login.php" passHref>  
+//     <Image  
+//       src={blogfb} // Replace with your image path  
+//       alt="Facebook"  
+//       width={25} // Set the desired width  
+//       height={25} // Set the desired height  
+//       className="transition duration-300 transform hover:scale-110"  
+//     />  
+//   </Link>  
+
+//   <Link href="https://www.instagram.com/login.php" passHref>  
+//     <Image  
+//       src={bloginsta} // Replace with your image path  
+//       alt="Instagram"  
+//       width={25} // Set the desired width  
+//       height={25} // Set the desired height  
+//       className="transition duration-300 transform hover:scale-110"  
+//     />  
+//   </Link>  
+
+//   <Link href="https://www.twitter.com/login.php" passHref>  
+//     <Image  
+//       src={blogtwitter} // Replace with your image path  
+//       alt="Twitter"  
+//       width={25} // Set the desired width  
+//       height={25} // Set the desired height  
+//       className="transition duration-300 transform hover:scale-110"  
+//     />  
+//   </Link>  
+// </div>
+//                      {/* ----------------------- */}
+
+
+
+
+
+
+//                                          {/* same 2 cards as in ri8 section */}
+//                                          <div className="mb-20">  
+//   {SSblogpagedata.map((item, index) => (  
+//     <div key={index} className="flex flex-col sm:flex-row gap-4 border-2 p-4 my-8 shadow-2xl">  
+//       <Image  
+//         src={item.image}  
+//         alt=""  
+//         width={150}  
+//         height={150}  
+//         className="flex-none"  
+//       />  
+//       <div className="leading-10 flex-1">  
+//         <h1 className="text-[#151875] text-2xl font-semibold">{item.name}</h1>  
+//         <h4 className="text-[#a3a2b6] text-[0.85rem]">{item.date}</h4>  
+//         <h3 className="text-[#a3a2b6] text-[0.85rem] line-clamp-2">{item.description}</h3>  
+//       </div>  
+//     </div>  
+//   ))}  
+// </div>
+
+
+
+// {/* email form */}
+// <div className="flex flex-col justify-center items-center">  
+//   <div className="w-full max-w-[30rem] h-auto text-[#8a8fb9] p-4">  
+//     <div className="mx-4 my-6">  
+
+//       <form className="flex flex-col gap-4">  
+
+//         <div className="relative w-full">  
+//           <FontAwesomeIcon icon={faEnvelope} className="absolute top-2 left-2 text-gray-500" />  
+//           <input  
+//             type="text"  
+//             name="email"  
+//             placeholder="Email Address"  
+//             className="border-[#8a8fb9] border-2 h-9 pl-8 pr-2 w-full"  
+//             required  
+//           />  
+//         </div>  
+
+//         <div className="relative w-full">  
+//           <FontAwesomeIcon icon={faLock} className="absolute top-2 left-2 text-gray-500" />  
+//           <input  
+//             type="password"  
+//             name="password"  
+//             placeholder="Password"  
+//             className="border-[#8a8fb9] border-2 h-9 pl-8 pr-2 w-full"  
+//             required  
+//           />  
+//         </div>  
+
+//         <div className="relative w-full">  
+//           <FontAwesomeIcon icon={faComment} className="absolute top-1 left-3 text-gray-500" />  
+//           <textarea  
+//             name="comment"  
+//             placeholder="Type your comment here..."  
+//             className="border-[#8a8fb9] border-2 h-36 pl-10 pr-2 w-full resize-none"  
+//             required  
+//           />  
+//         </div>  
+
+//         <h3 className="text-[#9096b2] text-[0.75rem]">  
+//           Save my name, email, and website in this browser for the next time I comment.  
+//         </h3>  
+        
+//         <MyButton label="Continue Shipping" />  
+//       </form>  
+//     </div>  
+//   </div>  
+// </div>
+
+
+
+
+
+
+
+
+//         </div>  
+//     </div>  
+// </div>
+//             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              
+                            
+//     )
+// }
+
+export default function SingleBlog() {  
+    return (  
+        <div className="overflow-x-hidden"> {/* Added overflow-x-hidden */}  
+            {/* Header Section */}  
+            <div className="h-[15rem] bg-[#f6f5ff] flex flex-col justify-center mb-24">  
+                <div className='max-w-7xl mx-auto text-center'>  
+                    <h1 className="text-3xl md:text-4xl leading-10 text-[#101750] font-bold">My Account</h1>  
+                    <div className='flex justify-center mt-5 mb-20 space-x-2'>  
+                        <h3 className="text-[#3f509e]">Home . </h3>  
+                        <h3 className="text-[#3f509e]">Pages . </h3>  
+                        <h3 className="text-[#3f509e]">My Account</h3>  
+                    </div>  
+                </div>  
+            </div>  
+
+            {/* Lower Part */}  
+            <div className="flex flex-col md:flex-row justify-center max-w-7xl mx-auto px-4 md:px-6"> {/* Adjusted padding */}  
+                <div className="flex flex-col w-full md:w-auto">  
+                    {/* Blog Section */}  
+                    <Link href="/singleblogpage" className="flex justify-center gap-4 px-4">  
+                        {datablog.slice(0, 1).map((item) => (  
+                            <Card item={item} key={item.id} />  
+                        ))}  
+                    </Link>  
+
+                    <div className="mr-4 mt-4 md:mt-0">  
+                        <div className="w-full h-10 bg-[#f7f8fb] text-[#8a8fb9] flex items-center justify-between px-6 border-black mb-6">  
+                            <h1 className="flex items-center">  
+                                <FontAwesomeIcon icon={faArrowLeft} className="mr-1" />  
+                                Previous Post  
+                            </h1>  
+                            <h1 className="flex items-center">  
+                                Previous Post  
+                                <FontAwesomeIcon icon={faArrowRight} className="ml-1" />  
+                            </h1>  
+                        </div>  
+
+                        {/* Four Pictures and 2 Paragraphs */}  
+                        <div className="w-full flex flex-wrap justify-center space-x-1 mb-4"> {/* Added justify-center */}  
+                            {OOblogpagedata.map((item, index) => (  
+                                <div key={index} className="h-80 flex-none max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mb-4">  
+                                    <Image  
+                                        src={item.image}  
+                                        alt=""  
+                                        width={180}  
+                                        height={180}  
+                                        className="h-60 hover:border-pink-400 hover:border-2 transition duration-300"  
+                                    />  
+                                    <h3 className="text-black text-[1rem] text-center leading-10 mt-1">{item.name}</h3>  
+                                    <div className="flex justify-between p-2 gap-2">  
+                                        <h4 className="text-[#151875] text-[0.85rem]">{`${item.newprice.toFixed(2)}`}</h4>  
+                                        <h4 className="text-pink-500 text-[0.85rem] line-through">{`${item.oldprice.toFixed(2)}`}</h4>  
+                                        <div className="flex">  
+                                            <Stars src={shoplist} />  
+                                        </div>  
+                                    </div>  
+                                </div>  
+                            ))}  
+                        </div>  
+
+                        {/* Follow Section */}  
+                        <div className="flex justify-center space-x-7 mt-5 mb-10 flex-wrap">  
+                            <Link href="https://www.facebook.com/login.php" passHref>  
+                                <Image  
+                                    src={blogfb}  
+                                    alt="Facebook"  
+                                    width={25}  
+                                    height={25}  
+                                    className="transition duration-300 transform hover:scale-110"  
+                                />  
+                            </Link>  
+
+                            <Link href="https://www.instagram.com/login.php" passHref>  
+                                <Image  
+                                    src={bloginsta}  
+                                    alt="Instagram"  
+                                    width={25}  
+                                    height={25}  
+                                    className="transition duration-300 transform hover:scale-110"  
+                                />  
+                            </Link>  
+
+                            <Link href="https://www.twitter.com/login.php" passHref>  
+                                <Image  
+                                    src={blogtwitter}  
+                                    alt="Twitter"  
+                                    width={25}  
+                                    height={25}  
+                                    className="transition duration-300 transform hover:scale-110"  
+                                />  
+                            </Link>  
+                        </div>  
+
+                        {/* Same 2 Cards as in Right Section */}  
+                        <div className="mb-20">  
+                            {SSblogpagedata.map((item, index) => (  
+                                <div key={index} className="flex flex-col sm:flex-row gap-4 border-2 p-4 my-8 shadow-2xl">  
+                                    <Image  
+                                        src={item.image}  
                                         alt=""
-                                        width={330}
-                                        height={300}
-                                        className="h-60"
-                                    />
+                                        width={150}  
+                                        height={150}  
+                                        className="flex-none"  
+                                    />  
+                                    <div className="leading-10 flex-1">  
+                                        <h1 className="text-[#151875] text-2xl font-semibold">{item.name}</h1>  
+                                        <h4 className="text-[#a3a2b6] text-[0.85rem]">{item.date}</h4>  
+                                        <h3 className="text-[#a3a2b6] text-[0.85rem] line-clamp-2">{item.description}</h3>  
+                                    </div>  
+                                </div>  
+                            ))}  
+                        </div>  
+
+                        {/* Email Form */}  
+                        <div className="flex flex-col justify-center items-center">  
+                            <div className="w-full max-w-[30rem] h-auto text-[#8a8fb9] p-4">  
+                                <div className="mx-4 my-6">  
+                                    <form className="flex flex-col gap-4">  
+                                        <div className="relative w-full">  
+                                            <FontAwesomeIcon icon={faEnvelope} className="absolute top-2 left-2 text-gray-500" />  
+                                            <input  
+                                                type="text"  
+                                                name="email"  
+                                                placeholder="Email Address"  
+                                                className="border-[#8a8fb9] border-2 h-9 pl-8 pr-2 w-full"  
+                                                required  
+                                            />  
+                                        </div>  
+
+                                        <div className="relative w-full">  
+                                            <FontAwesomeIcon icon={faLock} className="absolute top-2 left-2 text-gray-500" />  
+                                            <input  
+                                                type="password"  
+                                                name="password"  
+                                                placeholder="Password"  
+                                                className="border-[#8a8fb9] border-2 h-9 pl-8 pr-2 w-full"  
+                                                required  
+                                            />  
+                                        </div>  
+
+                                        <div className="relative w-full">  
+                                            <FontAwesomeIcon icon={faComment} className="absolute top-1 left-3 text-gray-500" />  
+                                            <textarea  
+                                                name="comment"  
+                                                placeholder="Type your comment here..."  
+                                                className="border-[#8a8fb9] border-2 h-36 pl-10 pr-2 w-full resize-none"  
+                                                required  
+                                            />  
+                                        </div>  
+
+                                        <h3 className="text-[#9096b2] text-[0.75rem]">  
+                                            Save my name, email, and website in this browser for the next time I comment.  
+                                        </h3>  
+
+                                        <MyButton label="Continue Shipping" />  
+                                    </form>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
 
 
-                                </div>))}
-                        </div>
+   {/* Sidebar */}  
+   <div className="md:w-[300px]">  
+                    {/* Search Bar */}  
+                    <h1 className="text-[#151875] text-2xl font-semibold mb-3">Search</h1>  
+                    <div className="border-[#bdbdd8] border-2 mb-7 w-full h-10 flex items-center">  
+                        <input   
+                            type="text"   
+                            placeholder="Search for Posts"   
+                            className="flex-grow outline-none px-2"   
+                        />  
+                        {/* <FontAwesomeIcon icon={faSearch} className="text-[#bdbdd8] ml-2 font-thin" />   */}
+                    </div>  
 
-                        {/* Paragraphs */}
+                    {/* Categories */}  
+                    <div className="mb-8">  
+                        <h1 className="text-[#151875] text-2xl font-semibold">Categories</h1>  
+                        <div className="text-[#3f509e] text-sm font-semibold mt-3 grid grid-cols-2 gap-2">  
+                            <h3>Women(21)</h3>  
+                            <h3>Men(15)</h3>  
+                            <h3>Kids(10)</h3>  
+                            <h3>Accessories(7)</h3>  
+                            {/* Add more categories as necessary */}  
+                        </div>  
+                    </div>  
 
-                        <div className="text-[#8a8fb9] text-[0.95rem] leading-6 space-y-8 py-8 pt-4 ">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, sapiente, tenetur repellendus assumenda recusandae dolore sed modi possimus placeat sequi ut natus rem non. Aperiam officia tenetur deserunt illum nobis!
-                                Earum architecto, dignissimos obcaecati consequatur, est quos soluta autem sed incidunt quam error quod? Tenetur fugit, esse illo deserunt officia quos porro temporibus veniam aliquam facere aut repellendus molestias sit.
-                                Ullam unde obcaecati quam! Commodi impedit obcaecati expedita recusandae nostrum. Sed rerum obcaecati minima vitae expedita commodi rem cupiditate impedit molestias eaque explicabo neque quam, distinctio provident recusandae atque similique!
-                                Molestias quibusdam voluptatibus, consectetur, autem commodi praesentium ab officiis ratione eaque architecto rem dolore quas impedit amet iusto illum, dolor minima accusantium minus et? Maxime illo est perspiciatis dolor iure.lo</p>
+                    {/* Recent Posts */}  
+                    <div className="mb-10">  
+                        <h1 className="text-[#151875] text-2xl font-semibold mb-5">Recent Posts</h1>  
+                        {Rblogpagedata.map((item) => (  
+                            <div className="flex gap-4 mb-4" key={item.id}>  
+                                <Image   
+                                    src={item.image}   
+                                    alt=""   
+                                    width={100}   
+                                    height={100}   
+                                    className="rounded-md"  
+                                />  
+                                <div className="flex flex-col">  
+                                    <h3 className="text-[#3f509e] text-[1rem]">{item.description}</h3>  
+                                    <h4 className="text-[#8a8fb9] text-[0.85rem]">{item.date}</h4>  
+                                </div>  
+                            </div>  
+                        ))}  
+                    </div>  
 
-                        </div>
-                    </div>
+                    {/* Sale Products */}  
+                    <div className="mb-10">  
+                        <h1 className="text-[#151875] text-2xl font-semibold mb-5">Sale Products</h1>  
+                        {Sblogpagedata.map((item) => (  
+                            <div className="flex gap-4 mb-4" key={item.id}>  
+                                <Image   
+                                    src={item.image}   
+                                    alt=""   
+                                    width={100}   
+                                    height={100}   
+                                    className="rounded-md"  
+                                />  
+                                <div className="flex flex-col">  
+                                    <h3 className="text-[#3f509e] text-[1rem]">{item.description}</h3>  
+                                    <h4 className="text-[#8a8fb9] text-[0.85rem]">{item.date}</h4>  
+                                </div>  
+                            </div>  
+                        ))}  
+                    </div>  
 
+                    {/* Offer Products */}  
+                    <div className="mb-8">  
+                        <h1 className="text-[#151875] text-2xl font-semibold mb-5">Offer Products</h1>  
+                        <div className="grid grid-cols-2 gap-4">  
+                            {Oblogpagedata.map((item) => (  
+                                <div className="flex flex-col items-center" key={item.id}>  
+                                    <Image   
+                                        src={item.image}   
+                                        alt=""   
+                                        width={150}  
+                                        height={150}  
+                                        className="mb-2 rounded-md"  
+                                    />  
+                                    <h3 className="text-[#3f509e] text-[0.75rem] leading-8">{item.description}</h3>  
+                                    <h4 className="text-[#8a8fb9] text-[0.65rem]">  
+                                        ${item.price1.min.toFixed(2)} - ${item.price1.max.toFixed(2)}  
+                                    </h4>  
+                                </div>  
+                            ))}  
+                        </div>  
+                    </div>  
 
+                    {/* Follow Section */}  
+                    <div className="mb-8">  
+                        <h1 className="text-[#151875] text-xl font-semibold mb-3">Follow</h1>  
+                        <div className="flex gap-3">  
+                            <Link href="https://www.facebook.com/login.php" passHref>  
+                                <Image   
+                                    src={blogfb}   
+                                    alt="Facebook"   
+                                    width={25}   
+                                    height={25}   
+                                />  
+                            </Link>  
+                            <Link href="https://www.instagram.com/login" passHref>  
+                                <Image   
+                                    src={bloginsta}   
+                                    alt="Instagram"   
+                                    width={25}   
+                                    height={25}   
+                                />  
+                            </Link>  
+                            <Link href="https://twitter.com/login" passHref>  
+                                <Image   
+                                    src={blogtwitter}   
+                                    alt="Twitter"   
+                                    width={25}   
+                                    height={25}   
+                                />  
+                            </Link>  
+                        </div>  
+                    </div>  
 
-
-                    {/* Follow Section */}
-                    <div className="flex space-x-7 justify-center mt-5 mb-10 ">
-                        <Link href="https://www.facebook.com/login.php" passHref>
-                            <Image
-                                src={blogfb} // Replace with your image path  
-                                alt="Description of the image"
-                                width={25} // Set the desired width  
-                                height={25} // Set the desired height  
-                            />
-                        </Link>
-
-
-                        <Link href="https://www.facebook.com/login.php" passHref>
-                            <Image
-                                src={bloginsta} // Replace with your image path  
-                                alt="Description of the image"
-                                width={25} // Set the desired width  
-                                height={25} // Set the desired height  
-                            />
-                        </Link>
-
-
-                        <Link href="https://www.facebook.com/login.php" passHref>
-                            <Image
-                                src={blogtwitter} // Replace with your image path  
-                                alt="Description of the image"
-                                width={25} // Set the desired width  
-                                height={25} // Set the desired height  
-                            />
-                        </Link>
-                    </div>
-                    {/* ----------------------- */}
-
-
-
-
-
-                    {/* same 2 cards as in ri8 section */}
-                    <div className="mb-20  ">
-
-                        {SSblogpagedata.map((item) => (
-
-                            <div className="flex gap-4 border-2 p-4 my-8 shadow-2xl">
-
-                                <Image
-                                    src={item.image}
-                                    alt=""
-                                    width={150}
-                                    height={150}
-                                />
-                                <div className="leading-10">
-                                    <h1 className="text-[#151875] text-2xl font-semibold">{item.name}</h1>
-                                    <h4 className="text-[#a3a2b6] text-[0.85rem]">{item.date}</h4>
-                                    <h3 className="text-[#a3a2b6] text-[0.85rem]">{item.description}</h3>
-
-                                </div>
-                            </div>))}
-                    </div>
-                    {/* ------------------- */}
-
-
-
-                    {/* email form */}
-                    <div className="flex flex-col justify-center items-center">
-                        <div className=" w-[30rem] h-[30rem]   text-[#8a8fb9]">
-                            <div className="mx-10 my-12 ">
-
-                                <form className="flex flex-col gap-4">
-
-                                    <div className="relative  w-full ">
-                                        <FontAwesomeIcon icon={faEnvelope} className="absolute top-2 left-2 text-gray-500" />
-                                        <input
-                                            type="text"
-                                            name="email"
-                                            placeholder="Email Address"
-                                            className="border-[#8a8fb9] border-2 h-9 pl-8 pr-2 w-full"
-                                            required
-                                        />
-                                    </div >
-                                    <div className="relative ">
-                                        <FontAwesomeIcon icon={faLock} className="absolute top-2 left-2 text-gray-500" />
-                                        <input
-                                            type="password"
-                                            name="password"
-                                            placeholder="Password"
-                                            className="border-[#8a8fb9] border-2 h-9 pl-8 pr-2 w-full"
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="relative col-span-2">
-                                        <FontAwesomeIcon icon={faComment} className="absolute top-1 left-3 text-gray-500" />
-                                        <textarea
-                                            name="comment"
-                                            placeholder="Type your comment here..."
-                                            className="border-[#8a8fb9] border-2 h-36 pl-10 pr-2 w-full resize-none" // Adjust height and padding  
-                                            required
-                                        />
-                                    </div>
-                                    <h3 className="text-[#9096b2] text-[0.75rem]">Save my name, email, and website in this browser for the next time I comment.</h3>
-                                    <MyButton label="Continue Shipping" />
-
-                                </form>
-                            </div>
-                        </div>
-
-
-
-                        </div>
-                    </div>
-                    {/* --------------- */}
-                </div>
-
-                {/* --------------------------------- */}
-                {/* search bar */}
-                <div>
-                    <h1 className="text-[#151875] text-2xl font-semibold mb-3">Search</h1>
-                    <div className="border-[#bdbdd8] border-2 mb-7 w-64 h-10 flex justify-around items-center " >
-                        <input type="text" placeholder="Search for Posts" />
-                        <FontAwesomeIcon icon={faSearch} className="text-[#bdbdd8] " />
-
-                    </div>
+                    {/* Tags Section */}  
+                    <div className="mb-5">  
+                        <h1 className="text-[#151875] text-xl font-semibold mb-3">Tags</h1>  
+                        <div className="flex flex-wrap gap-2">  
+                            {["General", "Atsanil", "Insas", "Bibsaas", "Nutella"].map(tag => (  
+                                <span key={tag} className="text-[#151875] text-[0.95rem] font-semibold underline hover:text-pink-500">{tag}</span>  
+                            ))}  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
 
 
-                    {/* Catoegories */}
-
-                    <div className="mb-8 ">
-                        <h1 className="text-[#151875] text-2xl font-semibold mt-5 ">Categories</h1>
-                        <div className="text-[#3f509e] font-[0.75rem]  leading-6 mt-3 grid grid-rows-3 grid-cols-2 w-80  grid-flow-col gap-1">
-                            <h3 className="">Women(21)</h3>
-                            <h3>Women(21)</h3>
-                            <h3>Women(21)</h3>
-                            <h3>Women(21)</h3>
-                            <h3>Women(21)</h3>
-                            <h3>Women(21)</h3>
-                        </div></div>
-
-                    {/* Recent products Post */}
-
-                    <div className="mb-10 ">
-                        <h1 className="text-[#151875] text-2xl font-semibold mb-5">Recent Post</h1>
-
-                        {Rblogpagedata.map((item) => (
-                            <div className="flex gap-4  ">
-                                <Image
-                                    src={item.image}
-                                    alt=""
-                                    width={100}
-                                    height={100}
-                                    className="mb-2"
-                                />
-                                <div className="mt-3">
-                                    <h3 className="text-[#3f509e] text-[1rem]">{item.description}</h3>
-                                    <h4 className="text-[#8a8fb9] text-[0.85rem]">{item.date}</h4>
-                                </div>
-                            </div>))}
-
-                    </div>
-
-                    {/* Sale Products */}
-
-                    <div className="mb-10">
-                        <h1 className="text-[#151875] text-2xl font-semibold mb-5">Sale Products</h1>
-                        {Sblogpagedata.map((item) => (
-                            <div className="flex gap-4">
-                                <Image
-                                    src={item.image}
-                                    alt=""
-                                    width={100}
-                                    height={100}
-                                    className="mb-2"
-                                />
-                                <div className="mt-3">
-                                    <h3 className="text-[#3f509e] text-[1rem]">{item.description}</h3>
-                                    <h4 className="text-[#8a8fb9] text-[0.85rem]">{item.date}</h4>
-                                </div>
-                            </div>))}
-                    </div>
-
-                    {/* Offer Producs Posts */}
-                    <div className="mb-2 w-80 " >
-                        <h1 className="text-[#151875] text-2xl font-semibold mb-5">Offer Product</h1>
-                        <div className="grid grid-rows-2 grid-cols-2 ">
-                            {Oblogpagedata.map((item) => (
-                                <div className="  mb-4 ">
-                                    <Image
-                                        src={item.image}
-                                        alt=""
-                                        width={150}
-                                        height={150}
-                                    />
-                                    <div className="flex flex-col ">
-                                        <h3 className="text-[#3f509e] text-[0.75rem] leading-8 ">{item.description}</h3>
-                                        <h4 className="text-[#8a8fb9] text-[0.65rem]">{`$${item.price1.min.toFixed(2)} - $${item.price1.max.toFixed(2)}`}</h4>
-                                        {/* <h4 className="text-[#8a8fb9] text-[0.85rem]">{`${item.price2.toFixed(2)}`}</h4> */}
-                                    </div>
-                                </div>))}
-                        </div>
-                    </div>
-
-                    {/* Follow section */}
-                    <div className=" gap-3 mb-8 ">
-                        <h1 className="text-[#151875] text-xl font-semibold mb-3">Follow</h1>
-                        <div className="flex gap-3">
-                            <Link href="https://www.facebook.com/login.php" passHref>
-                                <Image
-                                    src={blogfb} // Replace with your image path  
-                                    alt="Description of the image"
-                                    width={25} // Set the desired width  
-                                    height={25} // Set the desired height  
-                                />
-                            </Link>
-
-
-                            <Link href="https://www.facebook.com/login.php" passHref>
-                                <Image
-                                    src={bloginsta} // Replace with your image path  
-                                    alt="Description of the image"
-                                    width={25} // Set the desired width  
-                                    height={25} // Set the desired height  
-                                />
-                            </Link>
-
-
-                            <Link href="https://www.facebook.com/login.php" passHref>
-                                <Image
-                                    src={blogtwitter} // Replace with your image path  
-                                    alt="Description of the image"
-                                    width={25} // Set the desired width  
-                                    height={25} // Set the desired height  
-                                />
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* tags Section */}
-
-                    <div className="mb-5">
-                        <h1 className="text-[#151875] text-xl font-semibold mb-3">Tags</h1>
-                        <div className=" text-[#151875] text-[0.95rem] font-semibold underline hover:text-pink-500 grid grid-cols-3 grid-rows-2 w-96 gap-5">
-
-                            <h3>General</h3>
-                            <h3>Atsanil</h3>
-                            <h3>Insas</h3>
-                            <h3>Bibsaas</h3>
-                            <h3>Nutella</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <Logo/>
-            <Footer/>
-
-        </div>
-
-    )
+            </div>  
+       
+    )  
 }
