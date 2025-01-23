@@ -579,7 +579,7 @@ export default function SingleBlog() {
                             </h1>  
                         </div>  
 
-                        {/* Four Pictures and 2 Paragraphs */}  
+                        {/* Four Pictures  */}  
                         <div className="w-full flex flex-wrap justify-center space-x-1 mb-4"> {/* Added justify-center */}  
                             {OOblogpagedata.map((item, index) => (  
                                 <div key={index} className="h-80 flex-none max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mb-4">  
@@ -588,7 +588,7 @@ export default function SingleBlog() {
                                         alt=""  
                                         width={180}  
                                         height={180}  
-                                        className="h-60 hover:border-pink-400 hover:border-2 transition duration-300"  
+                                        className="h-60 hover:border-pink-400 hover:border-2 transition duration-300 hover:scale-105"  
                                     />  
                                     <h3 className="text-black text-[1rem] text-center leading-10 mt-1">{item.name}</h3>  
                                     <div className="flex justify-between p-2 gap-2">  

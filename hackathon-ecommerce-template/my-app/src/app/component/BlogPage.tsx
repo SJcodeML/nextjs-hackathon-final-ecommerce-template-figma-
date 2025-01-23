@@ -434,8 +434,8 @@ import blogpage2 from "../../public/blogpage2.png";
 import blogpage3 from "../../public/blogpage3.png";
 import penBlog from "../../public/penblog.png";
 import calenderBlog from "../../public/calender.png";
-// import Logo from "../component/Logoss";
-// import Footer from "../component/Footer";
+import Logo from "../component/Logoss";
+import Footer from "../component/Footer";
 import styles from "@/app/MyAccount/myaccount.module.css";
 
 
@@ -593,7 +593,7 @@ const Card = ({ item }:{item:DataBlog}) => (
                 priority  
                 width={250}  
                 height={250}  
-                className="object-cover"  
+                className="object-cover h-auto w-full"  
             />  
         </div>  
         <div className="p-4 flex flex-col">  
@@ -794,8 +794,8 @@ const BlogPage = () => {
             </div>  
 
             {/* Logo and Footer Section */}  
-            {/* <Logo />   */}
-            {/* <Footer />   */}
+            <Logo />  
+            <Footer />  
         </div>  
     );  
 };  
